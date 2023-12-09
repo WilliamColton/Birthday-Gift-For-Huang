@@ -102,7 +102,7 @@ class DS1302:
             ))        
 
 '''
-#示例程序
+# 示例程序
 # main program
 rtc = DS1302()
 rtc.adjust(7,7,2021, 3, 17,57,00)
