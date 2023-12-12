@@ -17,5 +17,6 @@ class GameEngine(screen.Screen):
         pass
 
 class GameObject(GameEngine):
+    
     def __init__(self, i2c, addr=60, external_vcc=False):
         super().__init__(i2c, addr, external_vcc)
