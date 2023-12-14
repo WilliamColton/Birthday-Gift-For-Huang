@@ -2,7 +2,9 @@ from GameEngine import GameObject
 from ssd1306 import SSD1306_I2C
 from machine import Pin,I2C
 import time
+
 i2c=I2C(0,scl=Pin(5),sda=Pin(4))
+p0=Pin(0,Pin.IN)
 
 g=GameObject(i2c)
 
@@ -17,6 +19,7 @@ pic1=[0x00,0x00,0x00,0x00,0x00,0x00,0xFB,0xC0,0x38,0x04,0x01,0x00,0x00,0x00,0x00
 x=118
 y=10
 while True:
+    print(p0.value())
     if x-20==y:
         g.fill(0)
         g.p32(pic1,x,30)
@@ -24,7 +27,6 @@ while True:
         time.sleep(1)
         x=110
     g.fill(0)
-    g.ellipse(y,30,10,10)
-    g.ellipse(x,30,10,10,f=True)
+
     g.show()
     x=x-1
